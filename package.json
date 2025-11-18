@@ -1,0 +1,17 @@
+{
+  "name": "check-if-its-down",
+  "version": "1.0.0",
+  "description": "Free official down detector and website status monitoring",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "down detector",
+    "status monitor",
+    "outage tracker",
+    "website status"
+  ],
+  "author": "",
+  "license": "MIT"
+}
