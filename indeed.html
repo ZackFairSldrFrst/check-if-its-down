@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free official Indeed down detector. Check if Indeed is down right now. Real-time status monitoring for Indeed job search outages, downtime, and service disruptions.">
+    <meta name="keywords" content="is indeed down, indeed down detector, free indeed status, official indeed status, indeed outage, indeed not working, indeed job search down">
+    <title>Is Indeed Down? Free Official Indeed Down Detector | Job Search Status Monitor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2164f3 0%, #1a4dbf 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .breadcrumb {
+            background: white;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .status-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .current-status {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .status-up {
+            background: #2ecc71;
+            box-shadow: 0 0 15px #2ecc71;
+        }
+
+        .status-down {
+            background: #e74c3c;
+            box-shadow: 0 0 15px #e74c3c;
+        }
+
+        .status-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .last-checked {
+            color: #7f8c8d;
+            margin-top: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin: 2rem 0 1rem 0;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #34495e;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
+        ul {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        .highlight-box {
+            background: #e8f0fe;
+            border-left: 4px solid #2164f3;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .recent-outages {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .outage-item {
+            padding: 1rem;
+            border-bottom: 1px solid #e1e8ed;
+        }
+
+        .outage-item:last-child {
+            border-bottom: none;
+        }
+
+        .outage-date {
+            font-weight: 600;
+            color: #2164f3;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: #2164f3;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .status-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>💼 Indeed Status Monitor</h1>
+            <p class="tagline">Real-time Indeed job search outage detection and status monitoring</p>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> &raquo; Indeed Down Detector
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="status-card">
+            <div class="current-status">
+                <h2>Current Indeed Status</h2>
+                <div style="margin: 2rem 0;">
+                    <span class="status-indicator status-up"></span>
+                    <div class="status-text" style="color: #2ecc71;">All Systems Operational</div>
+                </div>
+                <div class="last-checked">Last checked: November 18, 2025 - 10:30 AM ET</div>
+            </div>
+
+            <h2>About Indeed</h2>
+            <p>Indeed is the world's #1 job site, with over 350 million unique visitors every month. The platform aggregates job listings from thousands of sources including company career pages, job boards, staffing agencies, and associations. Indeed helps job seekers find opportunities and employers find qualified candidates across virtually every industry and job type.</p>
+
+            <p>For millions of job seekers worldwide, Indeed is an essential tool for searching positions, uploading resumes, and applying to opportunities. For recruiters and HR professionals, it's a critical platform for posting jobs and sourcing candidates.</p>
+
+            <div class="highlight-box">
+                <h3>November 18, 2025 Outage</h3>
+                <p><strong>Start Time:</strong> Approximately 6:25 AM ET</p>
+                <p><strong>Resolution:</strong> ~10:00 AM ET</p>
+                <p><strong>Duration:</strong> Approximately 3.5 hours</p>
+                <p><strong>Cause:</strong> Cloudflare infrastructure disruption (third-party CDN provider)</p>
+                <p><strong>Impact:</strong> Job seekers unable to search or apply for positions; employers unable to post jobs or access candidate information</p>
+            </div>
+
+            <h2>What Causes Indeed Outages?</h2>
+
+            <h3>Third-Party Infrastructure Issues</h3>
+            <p>The November 18, 2025 outage demonstrated how Indeed's reliance on third-party services like Cloudflare for content delivery can cause accessibility problems. When these infrastructure providers experience disruptions, Indeed becomes inaccessible even when Indeed's own systems are functioning normally.</p>
+
+            <h3>High Traffic Periods</h3>
+            <p>Indeed can experience heavy load during:</p>
+            <ul>
+                <li>Monday mornings when job seekers are most active</li>
+                <li>First of the month (when many new positions are posted)</li>
+                <li>After major company layoff announcements</li>
+                <li>During economic downturns when unemployment rises</li>
+            </ul>
+
+            <h3>Platform Updates and Maintenance</h3>
+            <p>Indeed regularly updates its search algorithms, user interface, and backend systems. While maintenance is typically scheduled during low-traffic periods, updates can occasionally cause temporary service disruptions.</p>
+
+            <h3>Database and Search Engine Issues</h3>
+            <p>With millions of job listings to index and search, problems with Indeed's database or search infrastructure can affect the ability to find and apply for positions.</p>
+
+            <h2>Impact of Indeed Outages</h2>
+
+            <h3>For Job Seekers</h3>
+            <p>When Indeed goes down, active job seekers face several challenges:</p>
+            <ul>
+                <li><strong>Missed Opportunities:</strong> Can't search for or view new job postings</li>
+                <li><strong>Application Deadlines:</strong> Unable to submit time-sensitive applications</li>
+                <li><strong>Profile Access:</strong> Can't update resumes or profile information</li>
+                <li><strong>Communication:</strong> May miss messages from potential employers</li>
+            </ul>
+
+            <h3>For Employers and Recruiters</h3>
+            <p>HR professionals and hiring managers are also affected:</p>
+            <ul>
+                <li><strong>Can't Post Jobs:</strong> Unable to publish new job listings</li>
+                <li><strong>Candidate Review:</strong> Can't access applicant information or resumes</li>
+                <li><strong>Screening Tools:</strong> Unable to use Indeed's candidate screening features</li>
+                <li><strong>Communication:</strong> Can't message candidates or respond to applications</li>
+            </ul>
+
+            <h2>Recent Indeed Outages</h2>
+            <div class="recent-outages">
+                <div class="outage-item">
+                    <div class="outage-date">November 18, 2025</div>
+                    <p><strong>Cloudflare-Related Outage:</strong> Indeed became inaccessible due to Cloudflare CDN disruption affecting multiple major internet services. The outage occurred during peak job-searching hours (early morning), preventing job seekers from searching and applying for positions, and blocking employers from posting jobs or reviewing candidates. Service was restored as Cloudflare resolved infrastructure issues.</p>
+                </div>
+            </div>
+
+            <h2>How to Check If Indeed Is Down</h2>
+
+            <p><strong>1. Use This Status Page:</strong> Our free Indeed down detector monitors the platform in real-time and provides immediate updates on detected issues.</p>
+
+            <p><strong>2. Test Different Access Methods:</strong></p>
+            <ul>
+                <li>Try the Indeed mobile app (iOS or Android)</li>
+                <li>Access from different devices or networks</li>
+                <li>Try different browsers or incognito mode</li>
+                <li>Check if you can access the homepage vs. specific job listings</li>
+            </ul>
+
+            <p><strong>3. Check for Specific Issues:</strong></p>
+            <ul>
+                <li>Can you load the homepage but not search?</li>
+                <li>Does the site load but applications won't submit?</li>
+                <li>Is your employer dashboard accessible?</li>
+                <li>Are you receiving error messages?</li>
+            </ul>
+
+            <p><strong>4. Social Media and Forums:</strong> Check platforms like Twitter/X, Reddit, or LinkedIn for reports from other users experiencing similar issues.</p>
+
+            <h2>What to Do During an Indeed Outage</h2>
+
+            <p><strong>For Job Seekers:</strong></p>
+            <ul>
+                <li><strong>Use Alternative Job Boards:</strong> Try LinkedIn, ZipRecruiter, Monster, or Glassdoor</li>
+                <li><strong>Apply Directly:</strong> Visit company career pages to apply without Indeed</li>
+                <li><strong>Save Job Listings:</strong> Bookmark positions you wanted to apply for</li>
+                <li><strong>Be Patient:</strong> Most outages resolve within a few hours</li>
+                <li><strong>Check Back Here:</strong> Monitor this page for real-time status updates</li>
+            </ul>
+
+            <p><strong>For Employers:</strong></p>
+            <ul>
+                <li><strong>Post on Alternative Platforms:</strong> Use LinkedIn, company website, or other job boards</li>
+                <li><strong>Document the Outage:</strong> Note any impact on hiring timelines</li>
+                <li><strong>Communicate with Team:</strong> Inform hiring managers about the disruption</li>
+                <li><strong>Prepare for Recovery:</strong> Be ready to review applications once service is restored</li>
+            </ul>
+
+            <h2>Preventing Impact from Outages</h2>
+
+            <p><strong>Diversify Your Job Search:</strong></p>
+            <ul>
+                <li>Don't rely solely on Indeed - use multiple job boards</li>
+                <li>Set up job alerts on various platforms</li>
+                <li>Network on LinkedIn and professional associations</li>
+                <li>Apply directly on company career pages</li>
+                <li>Work with recruiters who may have inside access</li>
+            </ul>
+
+            <p><strong>For Employers - Multi-Channel Recruiting:</strong></p>
+            <ul>
+                <li>Post jobs on multiple platforms simultaneously</li>
+                <li>Maintain your own careers page independent of job boards</li>
+                <li>Build talent pipelines that don't depend on a single platform</li>
+                <li>Have backup processes for candidate communication</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>Stay Informed</h3>
+                <p>Bookmark this page to quickly check Indeed's status anytime you're unable to access the platform. Our free official down detector monitors Indeed 24/7 and provides instant updates on service disruptions, helping job seekers and employers stay informed during outages.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Check If It's Down. Monitoring the internet, one status at a time.</p>
+            <p style="margin-top: 1rem;"><a href="index.html">Home</a> | <a href="twitter.html">Twitter Status</a> | <a href="cloudflare.html">Cloudflare Status</a> | <a href="chatgpt.html">ChatGPT Status</a> | <a href="shopify.html">Shopify Status</a></p>
+        </div>
+    </footer>
+</body>
+</html>

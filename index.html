@@ -167,11 +167,15 @@
             padding: 1rem;
             text-align: center;
             transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .service-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-color: #667eea;
         }
 
         .service-name {
@@ -277,25 +281,29 @@
                 <p>The outage's impact was felt across a diverse range of online services and platforms. Among the most prominent casualties were:</p>
 
                 <div class="affected-services">
-                    <div class="service-card">
+                    <a href="twitter.html" class="service-card">
                         <span class="status-indicator status-down"></span>
                         <div class="service-name">X (Twitter)</div>
-                    </div>
-                    <div class="service-card">
+                    </a>
+                    <a href="chatgpt.html" class="service-card">
                         <span class="status-indicator status-down"></span>
                         <div class="service-name">ChatGPT</div>
-                    </div>
+                    </a>
+                    <a href="cloudflare.html" class="service-card">
+                        <span class="status-indicator status-down"></span>
+                        <div class="service-name">Cloudflare</div>
+                    </a>
+                    <a href="shopify.html" class="service-card">
+                        <span class="status-indicator status-down"></span>
+                        <div class="service-name">Shopify</div>
+                    </a>
+                    <a href="indeed.html" class="service-card">
+                        <span class="status-indicator status-down"></span>
+                        <div class="service-name">Indeed</div>
+                    </a>
                     <div class="service-card">
                         <span class="status-indicator status-down"></span>
                         <div class="service-name">Claude AI</div>
-                    </div>
-                    <div class="service-card">
-                        <span class="status-indicator status-down"></span>
-                        <div class="service-name">Shopify</div>
-                    </div>
-                    <div class="service-card">
-                        <span class="status-indicator status-down"></span>
-                        <div class="service-name">Indeed</div>
                     </div>
                     <div class="service-card">
                         <span class="status-indicator status-down"></span>
@@ -487,6 +495,7 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 Check If It's Down. Monitoring the internet, one status at a time.</p>
+            <p style="margin-top: 1rem;"><a href="twitter.html" style="color: #667eea; text-decoration: none; margin: 0 0.5rem;">Twitter Status</a> | <a href="cloudflare.html" style="color: #667eea; text-decoration: none; margin: 0 0.5rem;">Cloudflare Status</a> | <a href="chatgpt.html" style="color: #667eea; text-decoration: none; margin: 0 0.5rem;">ChatGPT Status</a> | <a href="shopify.html" style="color: #667eea; text-decoration: none; margin: 0 0.5rem;">Shopify Status</a> | <a href="indeed.html" style="color: #667eea; text-decoration: none; margin: 0 0.5rem;">Indeed Status</a></p>
             <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">Real-time status monitoring and outage tracking</p>
         </div>
     </footer>

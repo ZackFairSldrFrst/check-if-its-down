@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free official Cloudflare down detector. Check if Cloudflare is down right now. Real-time status monitoring for Cloudflare CDN outages, downtime, and service disruptions affecting 20% of the internet.">
+    <meta name="keywords" content="is cloudflare down, cloudflare down detector, free cloudflare status, official cloudflare status, cloudflare outage, cloudflare not working, cloudflare CDN down, cloudflare network issues">
+    <title>Is Cloudflare Down? Free Official Cloudflare Down Detector | CDN Status Monitor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #F38020 0%, #d66a0a 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .breadcrumb {
+            background: white;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .status-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .current-status {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .status-up {
+            background: #2ecc71;
+            box-shadow: 0 0 15px #2ecc71;
+        }
+
+        .status-down {
+            background: #e74c3c;
+            box-shadow: 0 0 15px #e74c3c;
+        }
+
+        .status-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .last-checked {
+            color: #7f8c8d;
+            margin-top: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin: 2rem 0 1rem 0;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #34495e;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: #fff3e6;
+            border-left: 4px solid #F38020;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .stat-box {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #F38020;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            margin-top: 0.5rem;
+        }
+
+        .recent-outages {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .outage-item {
+            padding: 1rem;
+            border-bottom: 1px solid #e1e8ed;
+        }
+
+        .outage-item:last-child {
+            border-bottom: none;
+        }
+
+        .outage-date {
+            font-weight: 600;
+            color: #F38020;
+        }
+
+        .affected-sites {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .site-badge {
+            background: white;
+            border: 2px solid #e1e8ed;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: #F38020;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .status-card {
+                padding: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>☁️ Cloudflare Status Monitor</h1>
+            <p class="tagline">Real-time Cloudflare CDN outage detection and network monitoring</p>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> &raquo; Cloudflare Down Detector
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="status-card">
+            <div class="current-status">
+                <h2>Current Cloudflare Status</h2>
+                <div style="margin: 2rem 0;">
+                    <span class="status-indicator status-up"></span>
+                    <div class="status-text" style="color: #2ecc71;">All Systems Operational</div>
+                </div>
+                <div class="last-checked">Last checked: November 18, 2025 - 10:30 AM ET</div>
+            </div>
+
+            <h2>About Cloudflare</h2>
+            <p>Cloudflare is one of the world's largest and most critical internet infrastructure providers, serving as the backbone for approximately 20% of all websites on the internet. The company provides content delivery network (CDN) services, DDoS protection, internet security, and distributed domain name server (DNS) services to millions of websites worldwide.</p>
+
+            <div class="stat-box">
+                <div class="stat-number">20%</div>
+                <div class="stat-label">of the Internet Relies on Cloudflare</div>
+            </div>
+
+            <p>When Cloudflare experiences an outage, the impact is felt across the entire internet ecosystem, affecting everything from major social media platforms to small business websites, e-commerce stores, and critical infrastructure services.</p>
+
+            <div class="highlight-box">
+                <h3>November 18, 2025 Major Outage</h3>
+                <p><strong>Start Time:</strong> 6:20 AM ET</p>
+                <p><strong>Resolution:</strong> 9:57 AM ET (Fix implemented)</p>
+                <p><strong>Full Recovery:</strong> 10:30 AM ET</p>
+                <p><strong>Duration:</strong> Approximately 4 hours</p>
+                <p><strong>Cause:</strong> Unusual traffic spike to core Cloudflare services</p>
+                <p><strong>Impact:</strong> Global disruption affecting millions of websites and users</p>
+            </div>
+
+            <h2>Sites Affected by November 18 Outage</h2>
+            <div class="affected-sites">
+                <div class="site-badge">X (Twitter)</div>
+                <div class="site-badge">ChatGPT</div>
+                <div class="site-badge">Claude AI</div>
+                <div class="site-badge">Shopify</div>
+                <div class="site-badge">Indeed</div>
+                <div class="site-badge">Truth Social</div>
+                <div class="site-badge">Sora</div>
+                <div class="site-badge">DownDetector</div>
+                <div class="site-badge">McDonald's</div>
+            </div>
+
+            <h2>Why Cloudflare Outages Matter</h2>
+
+            <h3>Critical Infrastructure</h3>
+            <p>Cloudflare isn't just another tech company—it's a fundamental piece of internet infrastructure. The company processes over 50 million HTTP requests per second on average and protects millions of websites from cyber attacks. When Cloudflare goes down, a significant portion of the internet effectively becomes inaccessible.</p>
+
+            <h3>Single Point of Failure</h3>
+            <p>The November 18, 2025 outage highlighted the risks of internet infrastructure centralization. Despite the internet being designed with redundancy in mind, the practical reality is that a small number of companies—including Cloudflare, Amazon Web Services, and Google Cloud—control a disproportionate amount of internet traffic.</p>
+
+            <h3>Economic Impact</h3>
+            <p>A Cloudflare outage doesn't just affect user experience—it has real economic consequences:</p>
+            <ul>
+                <li><strong>E-commerce losses:</strong> Online stores lose sales every minute they're offline</li>
+                <li><strong>Advertising revenue:</strong> Platforms lose ad impression opportunities</li>
+                <li><strong>Productivity:</strong> Businesses can't access critical online tools</li>
+                <li><strong>Reputation damage:</strong> Users lose confidence in affected services</li>
+            </ul>
+
+            <h2>Common Causes of Cloudflare Outages</h2>
+
+            <h3>Traffic Spikes</h3>
+            <p>As reported in the November 18 incident, unusual traffic spikes can overwhelm even Cloudflare's massive infrastructure. These spikes could be caused by DDoS attacks, configuration errors, or sudden viral content.</p>
+
+            <h3>Software Updates</h3>
+            <p>Like any technology company, Cloudflare regularly updates its systems. Occasionally, these updates can introduce bugs or unexpected behavior that affects service availability.</p>
+
+            <h3>BGP Routing Issues</h3>
+            <p>Border Gateway Protocol (BGP) problems can cause widespread internet outages. If Cloudflare's routing becomes misconfigured, traffic may be unable to reach its destination.</p>
+
+            <h3>Cyber Attacks</h3>
+            <p>While Cloudflare specializes in protecting others from cyber attacks, the company itself can become a target. Sophisticated attacks targeting Cloudflare's infrastructure could potentially cause service disruptions.</p>
+
+            <h2>Recent Cloudflare Outages</h2>
+            <div class="recent-outages">
+                <div class="outage-item">
+                    <div class="outage-date">November 18, 2025</div>
+                    <p><strong>Major Global Outage:</strong> Unusual traffic spike caused widespread disruption affecting approximately 20% of internet traffic. Services including X, ChatGPT, Shopify, and Indeed went offline. Cloudflare engineering teams implemented emergency fixes within 4 hours.</p>
+                </div>
+            </div>
+
+            <h2>How to Check If Cloudflare Is Down</h2>
+
+            <p><strong>1. Check This Status Page:</strong> We monitor Cloudflare's network status in real-time and provide immediate updates on any detected issues.</p>
+
+            <p><strong>2. Official Status Page:</strong> Visit status.cloudflare.com for official updates directly from Cloudflare (note: this page may also be affected during major outages).</p>
+
+            <p><strong>3. Look for Patterns:</strong> If multiple unrelated websites are all down simultaneously, it's likely a Cloudflare issue rather than problems with individual sites.</p>
+
+            <p><strong>4. Check Social Media:</strong> During outages, users typically report issues on platforms like Reddit and any social media sites that remain operational.</p>
+
+            <h2>What to Do During a Cloudflare Outage</h2>
+
+            <p><strong>Be Patient:</strong> Cloudflare has world-class engineering teams who work quickly to resolve issues. Most outages are resolved within a few hours.</p>
+
+            <p><strong>Don't Flood Refresh:</strong> Repeatedly refreshing affected pages won't help and may actually slow down recovery efforts.</p>
+
+            <p><strong>Check Back Here:</strong> We provide real-time updates on Cloudflare's status and estimated recovery times.</p>
+
+            <p><strong>Understand the Scope:</strong> Remember that Cloudflare outages affect many websites simultaneously. The problem isn't with your internet connection or device.</p>
+
+            <div class="highlight-box">
+                <h3>Stay Informed</h3>
+                <p>Bookmark this page to quickly check Cloudflare's status anytime you experience widespread website accessibility issues. Our free down detector monitors Cloudflare 24/7 and provides instant updates on service disruptions.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Check If It's Down. Monitoring the internet, one status at a time.</p>
+            <p style="margin-top: 1rem;"><a href="index.html">Home</a> | <a href="twitter.html">Twitter Status</a> | <a href="chatgpt.html">ChatGPT Status</a></p>
+        </div>
+    </footer>
+</body>
+</html>

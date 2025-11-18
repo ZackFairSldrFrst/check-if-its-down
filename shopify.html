@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free official Shopify down detector. Check if Shopify is down right now. Real-time status monitoring for Shopify store outages, downtime, and e-commerce service disruptions.">
+    <meta name="keywords" content="is shopify down, shopify down detector, free shopify status, official shopify status, shopify outage, shopify not working, shopify store down, shopify admin down">
+    <title>Is Shopify Down? Free Official Shopify Down Detector | Store Status Monitor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #96bf48 0%, #7a9c3a 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .breadcrumb {
+            background: white;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .status-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .current-status {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .status-up {
+            background: #2ecc71;
+            box-shadow: 0 0 15px #2ecc71;
+        }
+
+        .status-down {
+            background: #e74c3c;
+            box-shadow: 0 0 15px #e74c3c;
+        }
+
+        .status-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .last-checked {
+            color: #7f8c8d;
+            margin-top: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin: 2rem 0 1rem 0;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #34495e;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
+        ul {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        .highlight-box {
+            background: #f4f7ed;
+            border-left: 4px solid #96bf48;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .recent-outages {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .outage-item {
+            padding: 1rem;
+            border-bottom: 1px solid #e1e8ed;
+        }
+
+        .outage-item:last-child {
+            border-bottom: none;
+        }
+
+        .outage-date {
+            font-weight: 600;
+            color: #96bf48;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: #96bf48;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .status-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🛍️ Shopify Status Monitor</h1>
+            <p class="tagline">Real-time Shopify store outage detection and e-commerce monitoring</p>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> &raquo; Shopify Down Detector
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="status-card">
+            <div class="current-status">
+                <h2>Current Shopify Status</h2>
+                <div style="margin: 2rem 0;">
+                    <span class="status-indicator status-up"></span>
+                    <div class="status-text" style="color: #2ecc71;">All Systems Operational</div>
+                </div>
+                <div class="last-checked">Last checked: November 18, 2025 - 10:30 AM ET</div>
+            </div>
+
+            <h2>About Shopify</h2>
+            <p>Shopify is the world's leading e-commerce platform, powering millions of online stores across 175 countries. From small businesses and independent entrepreneurs to major brands and enterprises, Shopify provides the infrastructure for merchants to sell products online, in person, and everywhere in between.</p>
+
+            <p>The platform processes billions of dollars in transactions annually and is critical infrastructure for countless businesses that depend on it for their daily operations and revenue.</p>
+
+            <div class="highlight-box">
+                <h3>November 18, 2025 Outage</h3>
+                <p><strong>Start Time:</strong> Approximately 6:25 AM ET</p>
+                <p><strong>Resolution:</strong> ~10:00 AM ET</p>
+                <p><strong>Duration:</strong> Approximately 3.5 hours</p>
+                <p><strong>Cause:</strong> Cloudflare infrastructure disruption (third-party CDN provider)</p>
+                <p><strong>Impact:</strong> Widespread store inaccessibility, admin panel downtime, lost sales during peak morning hours</p>
+            </div>
+
+            <h2>What Causes Shopify Outages?</h2>
+
+            <h3>Third-Party Infrastructure Dependencies</h3>
+            <p>Like many major platforms, Shopify relies on third-party services for content delivery and security. The November 18, 2025 outage was caused by problems with Cloudflare, Shopify's CDN provider. When these infrastructure partners experience issues, Shopify stores can become inaccessible even when Shopify's own systems are functioning properly.</p>
+
+            <h3>High Traffic Events</h3>
+            <p>Major shopping events can sometimes strain Shopify's infrastructure:</p>
+            <ul>
+                <li>Black Friday and Cyber Monday sales</li>
+                <li>Flash sales and limited product drops</li>
+                <li>Viral products that suddenly drive massive traffic</li>
+                <li>Holiday shopping seasons</li>
+            </ul>
+
+            <h3>Platform Updates and Maintenance</h3>
+            <p>Shopify regularly updates its platform with new features and improvements. While these updates are typically seamless, they can occasionally cause temporary disruptions, especially if they involve core infrastructure changes.</p>
+
+            <h3>Database and Backend Issues</h3>
+            <p>Problems with Shopify's database systems, payment processing infrastructure, or API services can affect store functionality, checkout processes, or admin panel access.</p>
+
+            <h2>Impact on Merchants</h2>
+
+            <h3>Direct Revenue Loss</h3>
+            <p>When Shopify goes down, merchants can't process sales. For the November 18 outage that occurred during peak morning shopping hours, many merchants experienced:</p>
+            <ul>
+                <li>Complete store inaccessibility for customers</li>
+                <li>Inability to process orders or payments</li>
+                <li>Lost sales opportunities during the 3.5-hour downtime</li>
+                <li>Abandoned carts and frustrated customers</li>
+            </ul>
+
+            <h3>Operational Disruptions</h3>
+            <p>Beyond lost sales, outages affect daily operations:</p>
+            <ul>
+                <li>Cannot access admin panel to manage inventory</li>
+                <li>Unable to fulfill or ship existing orders</li>
+                <li>Can't respond to customer service inquiries</li>
+                <li>Marketing campaigns may continue driving traffic to inaccessible stores</li>
+            </ul>
+
+            <h3>Small Business Impact</h3>
+            <p>Outages are particularly challenging for small businesses that:</p>
+            <ul>
+                <li>Rely entirely on Shopify for income</li>
+                <li>Operate on thin profit margins</li>
+                <li>Can't afford extended periods of downtime</li>
+                <li>May not have backup sales channels</li>
+            </ul>
+
+            <h2>Recent Shopify Outages</h2>
+            <div class="recent-outages">
+                <div class="outage-item">
+                    <div class="outage-date">November 18, 2025</div>
+                    <p><strong>Cloudflare-Related Outage:</strong> Shopify stores became inaccessible due to Cloudflare CDN disruption affecting multiple major internet services. Merchants experienced complete store downtime during peak morning shopping hours, resulting in significant lost revenue. Service was restored as Cloudflare resolved infrastructure issues.</p>
+                </div>
+            </div>
+
+            <h2>How to Check If Shopify Is Down</h2>
+
+            <p><strong>1. Use This Status Page:</strong> Our free Shopify down detector monitors the platform in real-time and provides immediate updates on detected issues.</p>
+
+            <p><strong>2. Test Different Components:</strong></p>
+            <ul>
+                <li>Try accessing your storefront from different devices/networks</li>
+                <li>Check if the admin panel (myshopify.com) is accessible</li>
+                <li>Test checkout functionality if the store loads</li>
+                <li>Verify the Shopify mobile app is working</li>
+            </ul>
+
+            <p><strong>3. Official Status Page:</strong> Visit status.shopify.com for updates directly from Shopify (note: this page may also be affected during CDN outages).</p>
+
+            <p><strong>4. Check Error Messages:</strong></p>
+            <ul>
+                <li>"Store unavailable" - Likely a platform-wide or CDN issue</li>
+                <li>"503 Service Unavailable" - Server-side problems</li>
+                <li>Infinite loading - Possible CDN or routing issues</li>
+                <li>Checkout errors - May indicate payment processing issues</li>
+            </ul>
+
+            <h2>What to Do During a Shopify Outage</h2>
+
+            <p><strong>For Merchants:</strong></p>
+            <ul>
+                <li><strong>Pause Paid Advertising:</strong> Stop ads driving traffic to your inaccessible store</li>
+                <li><strong>Communicate with Customers:</strong> Use social media to inform customers about the outage</li>
+                <li><strong>Monitor This Page:</strong> Check for real-time updates on resolution status</li>
+                <li><strong>Document Impact:</strong> Track lost sales for potential compensation claims</li>
+                <li><strong>Prepare for Recovery:</strong> Be ready for surge in orders once service is restored</li>
+            </ul>
+
+            <p><strong>For Shoppers:</strong></p>
+            <ul>
+                <li>Be patient - the issue is typically temporary</li>
+                <li>Save items you want to purchase and try again later</li>
+                <li>Check back within a few hours - most outages resolve quickly</li>
+                <li>Contact merchants through social media if urgent</li>
+            </ul>
+
+            <h2>Preventing Impact from Future Outages</h2>
+
+            <p><strong>Diversify Sales Channels:</strong> Don't rely solely on Shopify. Consider:</p>
+            <ul>
+                <li>Selling on marketplaces (Amazon, eBay, Etsy)</li>
+                <li>Maintaining social media selling options</li>
+                <li>Having a backup payment processor</li>
+                <li>Building an email list to communicate during outages</li>
+            </ul>
+
+            <p><strong>Business Continuity Planning:</strong></p>
+            <ul>
+                <li>Have a communication plan for outages</li>
+                <li>Consider business interruption insurance</li>
+                <li>Document all outages for records</li>
+                <li>Build customer loyalty to retain business after disruptions</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>Stay Informed</h3>
+                <p>Bookmark this page to quickly check Shopify's status anytime your store becomes inaccessible. Our free official down detector monitors Shopify 24/7 and provides instant updates on service disruptions, helping merchants minimize downtime impact and keep customers informed.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Check If It's Down. Monitoring the internet, one status at a time.</p>
+            <p style="margin-top: 1rem;"><a href="index.html">Home</a> | <a href="twitter.html">Twitter Status</a> | <a href="cloudflare.html">Cloudflare Status</a> | <a href="chatgpt.html">ChatGPT Status</a></p>
+        </div>
+    </footer>
+</body>
+</html>
